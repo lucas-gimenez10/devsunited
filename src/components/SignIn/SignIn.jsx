@@ -1,5 +1,5 @@
 import { loginWithGoogle } from "../../services/auth"
+import './SignIn.css'
+import { ReactComponent as SignInGoogle } from '../../assets/SignInGoogle.svg';
 
-const SignIn = () => <button onClick={loginWithGoogle}>Sign In With Google</button>
-
-export default SignIn
+export const SignIn = () => <SignInGoogle onClick={loginWithGoogle} className='loginButton'/>

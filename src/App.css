@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+@font-face {
+    font-family: Silkscreen-regular;
+    src: url('./assets/fonts/slkscr.ttf');
+}
+@font-face {
+    font-family: Silkscreen-bold;
+    src: url('./assets/fonts/slkscrb.ttf');
+}
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    background-color: #2E132C;
+    width: 100%;
+}
