@@ -1,10 +1,10 @@
 import './App.css';
-import { Tweet } from './components/Tweet/Tweet';
-import { TweetList } from './components/TweetsList/TweetList'
+import { TweetsList } from './components/TweetsList/TweetsList'
 import { useContext } from 'react';
 import { userContext } from './contexts/userProvider';
 import { SignOut } from './components/SignOut/SignOut'
 import { LoggedOut } from './components/LoggedOut/LoggedOut';
+import { CreateTweet } from './components/CreateTweet/CreateTweet';
 
 function App() {
 
@@ -12,10 +12,11 @@ function App() {
 
   return (
     <div className="app">
-      {user ? (<>
+      {user ? (
+      <>
         <SignOut/>
-        <TweetList />
-        <Tweet />
+        <CreateTweet />
+        <TweetsList />
       </>) : (
         // <SignIn/>
         <LoggedOut/>

@@ -1,17 +1,32 @@
-import { signInWithPopup, signOut, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth"
 import { auth } from './firebaseConfig'
+import { signInWithPopup, signOut, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth"
+import { setDocument, getDataById } from "./CRUDops";
 
 const provider = new GoogleAuthProvider();
 
-export const loginWithGoogle = async() => {
-  try{
-    const userCredentials = await signInWithPopup(auth, provider)
-    return userCredentials.user
-  } catch(err) {
-    console.log(err.message)
+const addUserToFirestore = async (user) => {
+  const { uid, displayName, email, photoURL } = user;
+  const userExist = await getDataById("users", uid);
+  if (!userExist) {
+    await setDocument("users", uid, {
+      name: displayName,
+      email: email,
+      photo: photoURL,
+    });
   }
+};
 
-}
+export const loginWithGoogle = async () => {
+  try {
+    const userCredentials = await signInWithPopup(auth, provider);
+    addUserToFirestore(userCredentials.user)
+    console.log(userCredentials.user)
+    return userCredentials.user;
+  } catch (err) {
+    console.log(err.message);
+  }
+};
+
 
 export const logout = async() => {
   
@@ -24,31 +39,6 @@ export const logout = async() => {
 }
 
 export const handleAuthChange = async (callback) => {
-  const unSuscribe = await onAuthStateChanged(auth, callback);
-  return unSuscribe;
-}
-
-// // fx login
-// export const signIn = async(email, password) => {
-//   try{
-//     const usersData = await signInWithEmailAndPassword(auth, email, password)
-    
-//     return usersData
-//   } catch(err) {
-//     console.log(err)
-//   }
-
-// }
-
-// // fx signup
-// export const createAccount = async(email, password) => {
-//   try{
-//     const usersData = await createUserWithEmailAndPassword(auth, email, password)
-    
-//     return usersData
-//   } catch(err) {
-//     console.log(err)
-//   }
-
-// }
-// // fx logout
+  const unSubscribe = await onAuthStateChanged(auth, callback);
+  return unSubscribe;
+};
