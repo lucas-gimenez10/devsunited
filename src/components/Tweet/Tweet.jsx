@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { userContext } from "../../contexts/userProvider";
 import { deleteData, updateData } from "../../services/CRUDops";
 
-export const Tweet = ({ user, tweet, id, likes }) => {
+export const Tweet = ({ autor, tweet, id, likes, email, uid }) => {
+  
+  const user = useContext(userContext);
+
   const handleDelete = async () => {
     await deleteData("tweets", id);
   };
+
 
   const handleLike = async () => {
     const likesCounter = likes ? likes + 1 : 1;
@@ -13,10 +18,11 @@ export const Tweet = ({ user, tweet, id, likes }) => {
 
   return (
     <div>
-      <h3>{user}</h3>
       <p>{tweet}</p>
+      <p>{autor}</p>
+      <p>{email}</p>
       <button onClick={handleLike}>Like {likes ? `(${likes})` : ""}</button>
-      <button onClick={handleDelete}>Delete</button>
+      {uid === user.uid ? <button onClick={handleDelete}>Delete</button> : null }
     </div>
   );
 };

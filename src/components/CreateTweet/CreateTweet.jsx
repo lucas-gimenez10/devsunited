@@ -5,11 +5,16 @@ import { useInput } from '../../hooks/useInput'
 
 export const CreateTweet = () => {
 
-    const { displayName, uid } = useContext(userContext);
+    const { displayName, uid, email } = useContext(userContext);
     const [ tweet, handleTweet ] = useInput()
 
     const handleSetData = async () => {
-        await addData("tweets", { tweet, user: displayName, uid });
+        await addData("tweets", {
+            tweet,
+            uid,
+            email,
+            autor: displayName
+        });
     };
 
 

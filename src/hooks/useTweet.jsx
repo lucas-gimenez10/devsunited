@@ -8,6 +8,7 @@ const useTweet = () => {
   useEffect(async () => {
     const unsubscribe = await getSubscription("tweets", (snapData) => {
       const tweetData = snapData.docs.map((doc) => {
+        console.log(doc)
         return { ...doc.data(), id: doc.id };
       });
       setTweets(tweetData);
