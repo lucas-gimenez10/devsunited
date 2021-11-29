@@ -1,0 +1,14 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /tweets/{id} {
+    	allow read;
+      allow create, update : if request.auth.uid != null;
+      allow delete;
+    }
+    match /users/{id} {
+    	allow read;
+      allow write;
+    }
+  }
+}
