@@ -5,6 +5,7 @@ import { userContext } from './contexts/userProvider';
 import { SignOut } from './components/SignOut/SignOut'
 import { LoggedOut } from './components/LoggedOut/LoggedOut';
 import { CreateTweet } from './components/CreateTweet/CreateTweet';
+import { CreateUser } from './components/CreateUser/CreateUser';
 
 function App() {
 
@@ -18,8 +19,8 @@ function App() {
         <CreateTweet />
         <TweetsList />
       </>) : (
-        // <SignIn/>
-        <LoggedOut/>
+        // <LoggedOut/>
+        <CreateUser />
       )}
     </div>
   )
