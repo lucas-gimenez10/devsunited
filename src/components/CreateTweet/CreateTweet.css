@@ -1,0 +1,63 @@
+.containerCreateTweet {
+    font-family: 'Fira Code', monospace;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    height: 218px;
+    padding-top: 20px;
+
+    border-bottom: 2px solid #60265B;
+    background-color: #150714;
+}
+.firstContainer {
+    display: flex;
+}
+.createTweetUserLogo {
+    width: 56px;
+    height: 56px;
+    margin-right: 17px;
+
+    border-radius: 50%;
+}
+.containerCreateTweet textarea {
+    font-size: 20px;
+
+    width: 500px;
+    height: 113px;
+    padding-top: 6px;
+    padding-left: 7px;
+
+    color: white;
+    background-color: #2F112D;
+}
+.containerCreateTweet textarea::placeholder {
+    font-family: 'Fira Code', monospace;
+    font-size: 20px;
+
+    padding-top: 6px;
+    padding-left: 7px;
+
+    color: #914D8B;
+}
+.innerContainerCreateTweet {
+    display: flex;
+    align-self: flex-end;
+    flex-direction: column;
+
+    width: 573px;
+    margin-top: 6px;
+}
+.buttonPost {
+    font-family: Silkscreen-bold;
+    font-size: 20px;
+
+    width: 102px;
+    height: 35px;
+    margin-top: 7px;
+
+    cursor: pointer;
+
+    background-color: #2F112D;
+}

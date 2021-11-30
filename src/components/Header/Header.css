@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding: 10px 0;
+}
+.logoUser {
+    border-radius: 50%;
+}
+.header div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 605px;
+}
+.smallLogo {
+    width: 45px;
+}

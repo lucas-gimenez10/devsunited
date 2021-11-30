@@ -6,6 +6,7 @@ import { SignOut } from './components/SignOut/SignOut'
 import { LoggedOut } from './components/LoggedOut/LoggedOut';
 import { CreateTweet } from './components/CreateTweet/CreateTweet';
 import { CreateUser } from './components/CreateUser/CreateUser';
+import { Header } from './components/Header/Header';
 
 function App() {
 
@@ -15,12 +16,13 @@ function App() {
     <div className="app">
       {user ? (
       <>
-        <SignOut/>
+        <Header />
+        {/* <SignOut/> */}
         <CreateTweet />
         <TweetsList />
       </>) : (
-        // <LoggedOut/>
-        <CreateUser />
+        <LoggedOut/>
+        // <CreateUser />
       )}
     </div>
   )

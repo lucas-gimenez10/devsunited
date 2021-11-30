@@ -23,4 +23,5 @@ html {
 .app {
     background-color: #2E132C;
     width: 100%;
+    font-family: 'Fira Code', monospace;
 }
