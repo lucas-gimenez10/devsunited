@@ -1,16 +1,21 @@
 .containerCreateTweet {
     font-family: 'Fira Code', monospace;
 
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-
     height: 218px;
     padding-top: 20px;
 
     border-bottom: 2px solid #60265B;
     background-color: #150714;
 }
+
+.mainContainerCreateTweet {
+    display: flex;
+    flex-direction: column;
+
+    width: 573px;
+    margin: 0 auto;
+}
+
 .firstContainer {
     display: flex;
 }
@@ -43,10 +48,10 @@
 }
 .innerContainerCreateTweet {
     display: flex;
+    align-items: center;
     align-self: flex-end;
     flex-direction: column;
 
-    width: 573px;
     margin-top: 6px;
 }
 .buttonPost {

@@ -24,13 +24,15 @@ export const CreateTweet = () => {
 
     return (
         <div className='containerCreateTweet'>
-            <div className='firstContainer'>     
-                <UserLogo className='createTweetUserLogo'/>  
-                <textarea type="text" placeholder='What’s happening?' onChange={handleTweet} value={tweet} />
-            </div> 
-            <div className="innerContainerCreateTweet">
-                <span className='colorBeta'>200 max.</span>
-                <button className='buttonPost' onClick={handleSetData}>post</button>
+            <div className="mainContainerCreateTweet">
+                <div className='firstContainer'>     
+                    <UserLogo className='createTweetUserLogo'/>  
+                    <textarea type="text" placeholder='What’s happening?' onChange={handleTweet} value={tweet} />
+                </div> 
+                <div className="innerContainerCreateTweet">
+                    <span className='colorBeta'>200 max.</span>
+                    <button className='buttonPost' onClick={handleSetData}>post</button>
+                </div>
             </div>
         </div>
     )
