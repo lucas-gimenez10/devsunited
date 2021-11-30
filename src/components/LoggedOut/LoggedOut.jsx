@@ -12,7 +12,7 @@ export const LoggedOut = () => {
                 <h2 className='loginTitle'>Lorem Ipsum Dolor</h2>
                 <p className='loginPar'>Lorem ipsum dolor sit amet consectetur, adipisicing elit</p>
                 <SignIn/>
-                <p className="copyright">© 2020 Devs_United - <span className="colorBeta">BETA</span></p>
+                <p className="copyright">© 2021 Devs_United - <span className="colorBeta">BETA</span></p>
             </div>
          </div>
      )
