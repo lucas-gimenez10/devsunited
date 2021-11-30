@@ -1,19 +1,18 @@
-import React, { useContext } from 'react/cjs/react.development';
+import React, { useContext } from 'react'
 import { userContext } from '../../contexts/userProvider';
 import { addData } from '../../services/CRUDops'
 import { useInput } from '../../hooks/useInput'
 
 export const CreateTweet = () => {
-
-    const { displayName, uid, email } = useContext(userContext);
+    const user = useContext(userContext);
     const [ tweet, handleTweet ] = useInput()
 
     const handleSetData = async () => {
         await addData("tweets", {
             tweet,
-            uid,
-            email,
-            autor: displayName
+            uid: user.uid,
+            email: user.email,
+            autor: user.displayName
         });
     };
 
