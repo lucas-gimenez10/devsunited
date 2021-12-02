@@ -5,7 +5,7 @@ export const userContext = createContext()
 
 const UserProvider = ({ children }) => {
 
-   const [user, setUser] = useState(null)
+    const [user, setUser] = useState(null);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(async () => {
@@ -21,7 +21,7 @@ const UserProvider = ({ children }) => {
         return () => unsubscribe ();
     }, [])
 
-    return <userContext.Provider value={user}> {children} </userContext.Provider>
+    return <userContext.Provider value={ user }> {children} </userContext.Provider>
 }
 
 export default UserProvider

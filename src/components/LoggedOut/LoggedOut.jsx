@@ -2,6 +2,7 @@ import React from 'react';
 import './LoggedOut.css'
 import { ReactComponent as BigLogo } from '../../assets/logoBig.svg';
 import { SignIn } from '../SignIn/SignIn'
+
 export const LoggedOut = () => {
      return (
          <div className='mainSignInContainer'>

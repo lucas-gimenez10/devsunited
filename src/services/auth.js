@@ -11,7 +11,7 @@ const addUserToFirestore = async (user) => {
     await setDocument("users", uid, {
       name: displayName,
       email: email,
-      photo: photoURL,
+      photo: photoURL
     });
   }
 };

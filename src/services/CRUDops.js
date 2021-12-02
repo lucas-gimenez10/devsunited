@@ -64,3 +64,11 @@ export const getSubscription = async (col, callback) => {
     const unsubscribe = await onSnapshot(collectionRef, callback);
     return unsubscribe;
   };
+
+// get username - CONSULTAR FAUS
+export const getUsername = async (user) => {
+ let usn = await getDataById('users', user.uid).then(res => res)
+ const username = usn.username
+ console.log(username)
+  return username
+}

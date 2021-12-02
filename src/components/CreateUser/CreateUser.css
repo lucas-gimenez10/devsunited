@@ -63,6 +63,8 @@
     height: 67px;
     margin: 50px 0;
 
+    cursor: pointer;
+
     color: white;
     background-color: #00DA76;
 }

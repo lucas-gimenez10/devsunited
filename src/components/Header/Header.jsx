@@ -3,6 +3,7 @@ import { ReactComponent as SmallLogo } from '../../assets/logoSmall.svg';
 import { ReactComponent as TitleHeader } from '../../assets/title.svg';
 import { ReactComponent as UserLogo } from '../../assets/userLogo.svg';
 import './Header.css'
+
 export const Header = () => {
     return (
         <>

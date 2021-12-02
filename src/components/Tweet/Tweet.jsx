@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { userContext } from "../../contexts/userProvider";
 import { deleteData, updateData } from "../../services/CRUDops";
-import { ReactComponent as UserLogo } from '../../assets/userLogo.svg';
 import { ReactComponent as DeleteButton } from '../../assets/trash.svg';
 import { ReactComponent as Like } from '../../assets/like.svg';
 import { ReactComponent as Unlike } from '../../assets/unlike.svg';
