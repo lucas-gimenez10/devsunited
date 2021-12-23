@@ -1,6 +1,6 @@
 import './App.css';
 import { TweetsList } from './components/TweetsList/TweetsList'
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { userContext } from './contexts/userProvider';
 import { SignOut } from './components/SignOut/SignOut'
 import { LoggedOut } from './components/LoggedOut/LoggedOut';
@@ -11,15 +11,20 @@ import { getUsername } from './services/CRUDops';
 
 function App() {
 
-  const user = useContext(userContext)
-
+  const user = useContext(userContext);
+  const [ usrnam, setUsrnam ] = useState('');
+  if(user) {getUsername(user)
+    .then(res =>{ 
+      setUsrnam(res)
+    })}
+    console.log(usrnam)
 
   return (
     <div className="app">
       {user ? (
       <>
         {/* CONSULTAR FAUS */}
-        { ('username' in getUsername(user)) ? (
+        { usrnam !== undefined && usrnam !== '' ? (
           <>
             <SignOut/>
             <Header />
