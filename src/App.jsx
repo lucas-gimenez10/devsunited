@@ -13,8 +13,9 @@ function App() {
 
   const user = useContext(userContext);
   const [ usrnam, setUsrnam ] = useState('');
+
   if(user) {getUsername(user)
-    .then(res =>{ 
+    .then(res =>{
       setUsrnam(res)
     })}
     console.log(usrnam)
